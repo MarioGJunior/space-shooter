@@ -9,7 +9,11 @@ public class Player_Script : MonoBehaviour
     private float width;
     private float height;
 
-    public float speed = 10f;
+    [SerializeField]
+    private float speed = 10f;
+
+    [SerializeField]
+    private GameObject shot;
 
 
     // Start is called before the first frame update
@@ -29,6 +33,9 @@ public class Player_Script : MonoBehaviour
         rb.velocity = new Vector2(horizontalMove, verticalMove) * speed;
 
         Edges();
+
+        Shoot();
+
     }
 
     private void Edges()
@@ -49,6 +56,14 @@ public class Player_Script : MonoBehaviour
         else if (transform.position.y < -4)
         {
             transform.position = new Vector2(transform.position.x, -4);
+        }
+    }
+
+    private void Shoot()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(shot, transform.position, Quaternion.identity);
         }
     }
 
