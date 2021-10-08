@@ -20,6 +20,9 @@ public class Enemy_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (transform.position.y < -Camera.main.orthographicSize - 1)
+        {
+            Destroy(gameObject);
+        }
     }
 }
