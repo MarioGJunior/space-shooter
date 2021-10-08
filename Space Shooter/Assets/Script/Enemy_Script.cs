@@ -25,4 +25,11 @@ public class Enemy_Script : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        Destroy(collider.gameObject);
+        Destroy(gameObject);
+    }
+
 }
