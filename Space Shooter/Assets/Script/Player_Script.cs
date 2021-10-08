@@ -28,10 +28,10 @@ public class Player_Script : MonoBehaviour
 
         rb.velocity = new Vector2(horizontalMove, verticalMove) * speed;
 
-        borderlands();
+        Edges();
     }
 
-    private void borderlands()
+    private void Edges()
     {
         if (transform.position.x < -width)
         {
