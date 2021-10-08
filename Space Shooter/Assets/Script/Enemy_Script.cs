@@ -28,6 +28,11 @@ public class Enemy_Script : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
+        if(collider.tag == "Laser")
+        {
+            Score_Script.ScoreUpdate(5);
+        }
+
         Destroy(collider.gameObject);
         Destroy(gameObject);
     }
