@@ -8,6 +8,7 @@ public class Player_Script : MonoBehaviour
     private Rigidbody2D rb;
     private float width;
     private float height;
+    private AudioSource sound;
 
     [SerializeField]
     private float speed = 10f;
@@ -16,12 +17,14 @@ public class Player_Script : MonoBehaviour
     private GameObject shot;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         height = Camera.main.orthographicSize;
         width = height * Camera.main.aspect;
+        sound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -63,6 +66,7 @@ public class Player_Script : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            sound.Play();
             Instantiate(shot, transform.position, Quaternion.identity);
         }
     }
