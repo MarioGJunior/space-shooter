@@ -5,7 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Laser
-  - projectile
   layers:
   - Default
   - TransparentFX
